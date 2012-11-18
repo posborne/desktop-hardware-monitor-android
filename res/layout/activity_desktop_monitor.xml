@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_launcher"
     tools:context=".DesktopMonitorActivity" >
 
     <TextView
@@ -27,6 +26,16 @@
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/cpuUsage"
+        android:orientation="vertical" >
+    </LinearLayout>
+
     <ProgressBar
         android:id="@+id/cpuProgressBar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -34,18 +43,45 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/cpuUsage"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="19dp" />
+        android:layout_below="@+id/cpuUsage" />
 
-    <Button
-        android:id="@+id/updateButton"
+    <TextView
+        android:id="@+id/ramFreeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView01"
+        android:layout_alignBottom="@+id/TextView01"
+        android:layout_toRightOf="@+id/textView1"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/TextView01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/cpuProgressBar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/cpuProgressBar"
-        android:text="Update"
-        android:onClick="updateDisplay" />
- 
+        android:layout_below="@+id/cpuProgressBar"
+        android:layout_marginTop="46dp"
+        android:text="RAM Free: "
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ProgressBar
+        android:id="@+id/ramFreeProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView01"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ramFreeTextView" />
+
+    <TextView
+        android:id="@+id/cpuTemperatureTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignLeft="@+id/ramFreeProgressBar"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/linearLayout1"
+        android:text="CPU Temp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
 </RelativeLayout>
